@@ -35,7 +35,9 @@
       :maximized="autoMaximized && $q.platform.is.mobile"
       no-backdrop-dismiss
       transition-show="scale"
-      transition-hide="scale">
+      transition-hide="scale"
+      :content-style="`z-index:${popupZindex || 6000};`"
+      >
       <q-card class="q-pa-none">
         <q-card-section class="q-pa-none">
           <div :class="`bg-${color} absolute-top-left absolute-top-right`" style="min-height:86px" />
@@ -134,6 +136,10 @@ export default {
     withSeconds: {
       type: Boolean,
       default: true
+    },
+    popupZindex: {
+      type: Number,
+      default: 6000
     },
     withInput: {
       type: Boolean,

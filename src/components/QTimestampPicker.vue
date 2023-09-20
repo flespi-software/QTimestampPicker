@@ -33,6 +33,7 @@
       @show="onDialogShow"
       @hide="onDialogHide"
       :maximized="autoMaximized && $q.platform.is.mobile"
+      :content-style="`z-index:${popupZindex || 6000};`"
       no-backdrop-dismiss
       transition-show="scale"
       transition-hide="scale">
@@ -134,6 +135,10 @@ export default {
     withSeconds: {
       type: Boolean,
       default: true
+    },
+    popupZindex: {
+      type: Number,
+      default: 6000
     },
     withInput: {
       type: Boolean,
